@@ -45,12 +45,11 @@ DEBUT
 			cas par defaut: 	//février	
 	
 				SI
- 					(annee MOD 4=0 ET annee MOD 100<>0) ou (annee MOD 400=0) 
-				ALORS
+ 					(annee MOD 4=0 ET annee MOD 100<>0) ou (annee MOD 400=0) ALORS
     	    	   			nbj <- 29	//bissextile
 				SINON
     	    	  			nbj <- 28	//non-bissextile
-    	    	FINSI
+    	    			FINSI
 	
     	FINCASPARMIS
 
