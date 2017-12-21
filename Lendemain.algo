@@ -38,16 +38,21 @@ DEBUT
 
 		SI (M mod 2 = 0) ET (m <> 2) ET (J=< 31) OU (M mod 2 <> 0) ET (j=>30) OU (m = 2) ET (A mod 4 = 0) ET (A mod 100 <> 0) OU (A mod 4 = 0 ) ET (mod 400 = 0) ET (j=>29) OU (m = 2) ET (j=>28) ALORS
 			valid <- VRAIS
+			{Si le mois mod 2 = 0 (donc si le mois est paire) et que le moi n'es pas = a 2 et 
+			qu'il y a 31 jour ou moins OU si le mois mod 2 <> 0 (donc le mois n'es pas paire) et qu'il y a
+			30 jour ou moins OU si le mois = 2 et que l'année est bissextile, qu'il y a 29 jour ou moins OU si le
+			mois = 2, que l'année n'es pas bissextille et qu'il y a 28 jour ou moins. ALORS valid = vrais}
 		FINSI
 
-		{Si le mois mod 2 = 0 (donc si le mois est paire) et que le moi n'es pas = a 2 et qu'il y a 31 jour ou moins OU si le mois mod 2 <> 0 (donc le mois n'es pas paire) et qu'il y a 30 jour ou moins OU si le mois = 2 et que l'année est bissextile, qu'il y a 29 jour ou moins OU si le mois = 2, que l'année n'es pas bissextille et qu'il y a 28 jour ou moins. ALORS valid = vrais}
+		
 
 		Si (M > 12) OU (M < 1) ALORS
 			valid <- FAUX
 			ECRIRE "Votre mois n'es pas valide ! "
+			// Si le mois est plus grand que 12 ou plus petit que 1 valid = FAUX
 		FINSI
 
-		// Si le mois est plus grand que 12 ou plus petit que 1 valid = FAUX
+		
 			 
 
 
