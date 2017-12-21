@@ -1,6 +1,8 @@
 ALGORITHME : Lendemain
 //BUT : connaitre la date de lendemain
-//PRINCIPE : 
+{PRINCIPE : Comparer le nombre de jour max de chaque mois,
+avec la date entrée par l’utilisateur + 1 grâce a un cas parmi si elle dépasse le nombre max du mois 
+(30, 31 ou 29/28), le mois augmentera de 1, si en augmentant, il dépasse 12 ont passe a l’année suivante}
 //ENTREE : une date
 //SORTIE : la date du lendemain
 
@@ -61,7 +63,7 @@ DEBUT
 			cas 4,6,8,10,12:	nbj <- 31	//Nombre de jours = 31	
 			cas 1,3,5,7,9,11:	nbj <- 30	//Nombre de jours = 30
 			cas par defaut: 	nbj <- 29	//année bissextile, nombre de jours = 29
-n
+
 		FINCASPARMIS
 
 
