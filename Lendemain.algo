@@ -86,26 +86,30 @@ DEBUT
 	FINSI
 
 	
-	SI (J+1 > nbj) ALORS //Si le jour + 1 est plus grand que le nombre de jours max, alors on ajoute 1 aux mois.
+	SI (m <> 12) ET (J+1 > nbj) ALORS //Si le jour + 1 est plus grand que le nombre de jours max, alors on ajoute 1 aux mois.
 
 		M <- M+1
 		J <- 1
+		
+		ECRIRE "Nous serons le: ",J," ",M," ",A //changement de mois
+	FINSI
 
-		SI (m = 12) ET (J+1 > nbj) ALORS //Si le nombre de mois est deja = a 12 ont passe a l'année suivante
+	SI (m = 12) ET (J+1 > nbj) ALORS //Si le nombre de mois est deja = a 12 ont passe a l'année suivante
 
-			A <- A+1
-			J <- 1
-			M <- 1
+		A <- A+1
+		J <- 1
+		M <- 1
 
-			ECRIRE "Nous serons une nouvelle année ! (",J" ",M" ",A) 
-
-		FINSI
-
-		ECRIRE "Nous serons le: ",J," ",M," ",A
-
-		SINON ECRIRE "Nous serons le: ",J+1," ",M," ",A
+		ECRIRE "Nous serons une nouvelle année ! (",J" ",M" ",A)//changement d'année
 
 	FINSI
 
+	Si (j+1 < nbj) ALORS //Si le jour est plus petit que le nombre max de jour
+
+		ECRIRE "Nous serons le: ",J+1," ",M," ",A//changement de jour
+		
+	FINSI
+
+	
 FIN
 
