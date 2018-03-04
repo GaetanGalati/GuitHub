@@ -64,22 +64,22 @@ VAR
 	Win_player2 : ENTIER
 
 DEBUT
-	SI grille[1,1]="O" and grille[2,1]="O" and grille[3,1]="O" 
-	OU grille[1,2]="O" and grille[2,2]="O" and grille[3,2]="O"
-	OU grille[1,3]="O" and grille[2,3]="O" and grille[3,3]="O"
-	OU grille[1,1]="O" and grille[2,2]="O" and grille[3,3]="O"
-	OU grille[3,1]="O" and grille[2,2]="O" and grille[1,3]="O" 
+	SI grille[1,1]="O" ET grille[2,1]="O" ET grille[3,1]="O" 
+	OU grille[1,2]="O" ET grille[2,2]="O" ET grille[3,2]="O"
+	OU grille[1,3]="O" ET grille[2,3]="O" ET grille[3,3]="O"
+	OU grille[1,1]="O" ET grille[2,2]="O" ET grille[3,3]="O"
+	OU grille[3,1]="O" ET grille[2,2]="O" ET grille[1,3]="O" 
 	
 	ALORS
 		ECRIRE(player1&" Remporte la manche ! bravo a lui !")
 		Win_Player1 <- Win_Player1 +1
 	FINSI
 
-	SI grille[1,1]="X" and grille[2,1]="X" and grille[3,1]="X" 
-	OU grille[1,2]="X" and grille[2,2]="X" and grille[3,2]="X"
-	OU grille[1,3]="X" and grille[2,3]="X" and grille[3,3]="X"
-	OU grille[1,1]="X" and grille[2,2]="X" and grille[3,3]="X"
-	OU grille[3,1]="X" and grille[2,2]="X" and grille[1,3]="X" 
+	SI grille[1,1]="X" ET grille[2,1]="X" ET grille[3,1]="X" 
+	OU grille[1,2]="X" ET grille[2,2]="X" ET grille[3,2]="X"
+	OU grille[1,3]="X" ET grille[2,3]="X" ET grille[3,3]="X"
+	OU grille[1,1]="X" ET grille[2,2]="X" ET grille[3,3]="X"
+	OU grille[3,1]="X" ET grille[2,2]="X" ET grille[1,3]="X" 
 	
 	ALORS
 		ECRIRE(player2&" Remporte la manche ! bravo a lui !")
