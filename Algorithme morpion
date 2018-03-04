@@ -1,0 +1,132 @@
+Algorithme morpion
+
+ //BUT:Jouer au morpion	
+ //ENTREE:La case choisi
+ //SORTIE:Gagne ou non et indique quel joueur gagne une manche
+
+CONST
+	NB_MANCHE = 3 :ENTIER
+
+TYPE
+	Grille = tableau [1..3,1..3] DE ENTIER
+
+
+
+FONCTION The_Grid (var grid : grille [1..3,1..3] DE ENTIER )
+
+VAR
+	x,y : ENTIER
+	cpt : ENTIER
+	end : BOOLEEN
+DEBUT
+
+	ECRIRE ("Manche"&ctp)
+	 POUR x=1 A 3 FAIRE
+     	POUR y=1 A 3 FAIRE
+     		grille[x,y]:="-"
+     		cpt <- cpt+1
+     FINPOUR
+	FINPOUR
+FINFONCTION
+
+FONCTION party(var player1,player2: CHAINE, grid : grille [1..3,1..3] DE ENTIER, start : ENTIER  )
+
+VAR
+	x,y : ENTIER
+
+DEBUT
+	
+	SI start = 1 ALORS
+		TANTQUE grid[x,y] <> '-' FAIRE
+			DEBUT
+				ECRIRE(player1, "choisiez une ligne (de 1 a 3)")
+				LIRE (x)
+				ECRIRE(player1, "choisiez une colonne (de 1 a 3)")
+				LIRE (y)
+				grid[i,j]<-"O"
+				start <- 2
+			FIN
+	SI start = 2 ALORS
+		TANTQUE grid[x,y] <> '-' FAIRE
+			DEBUT
+				ECRIRE(player2, "choisiez une ligne (de 1 a 3)")
+				LIRE (x)
+				ECRIRE(player2, "choisiez une colonne (de 1 a 3)")
+				LIRE (y)
+				grid[i,j]<-"X"
+				start <- 1
+			FIN
+FINFONCTION
+
+FONCTION win (var grid : grille [1..3,1..3] DE ENTIER, player1,player2: CHAINE)
+VAR 
+	Win_player1 : ENTIER
+	Win_player2 : ENTIER
+
+DEBUT
+	SI grille[1,1]="O" and grille[2,1]="O" and grille[3,1]="O" 
+	OU grille[1,2]="O" and grille[2,2]="O" and grille[3,2]="O"
+	OU grille[1,3]="O" and grille[2,3]="O" and grille[3,3]="O"
+	OU grille[1,1]="O" and grille[2,2]="O" and grille[3,3]="O"
+	OU grille[3,1]="O" and grille[2,2]="O" and grille[1,3]="O" 
+	
+	ALORS
+		ECRIRE(player1&" Remporte la manche ! bravo a lui !")
+		Win_Player1 <- Win_Player1 +1
+	FINSI
+
+	SI grille[1,1]="X" and grille[2,1]="X" and grille[3,1]="X" 
+	OU grille[1,2]="X" and grille[2,2]="X" and grille[3,2]="X"
+	OU grille[1,3]="X" and grille[2,3]="X" and grille[3,3]="X"
+	OU grille[1,1]="X" and grille[2,2]="X" and grille[3,3]="X"
+	OU grille[3,1]="X" and grille[2,2]="X" and grille[1,3]="X" 
+	
+	ALORS
+		ECRIRE(player2&" Remporte la manche ! bravo a lui !")
+		Win_Player2 <- Win_Player2 +1
+	FINSI
+
+	SI Win_Player1 = NB_MANCHE ALORS
+		ECRIRE ("Incroyable "&player1&"A gagngez une partie de morpion ! Il est trop fort !")
+
+		SI Win_Player2 = NB_MANCHE ALORS
+			ECRIRE ("Incroyable "&player2&"A gagngez une partie de morpion ! Il est trop fort !")
+
+				SI Win_Player2 = Win_Player1
+				ECRIRE ("Egalité ! ")
+			FINSI
+		FINSI
+	FINSI
+
+	
+
+ //Programme pricipal
+ VA
+
+ 	Player1,Player2 : CHAINE
+ 	tabgrid tableau [1..3,1..3] DE ENTIER
+ 	Start : ENTIER
+
+DEBUT
+	Start <- ALeatoire (1,2)
+	ECRIRE ("Joueur 1 rentrez votre nom SVP")
+	lire (player1)
+	ECRIRE ("Joueur 2 rentrez votre nom SVP")
+	lire (player2)
+
+	ECRIRE (Player1&" VS "&player2)
+
+		SI start = 1 ALORS
+				ECRIRE("le joueur qui commence : "&player1)
+				ECRIRE("Vous controlez les O")
+
+			SI start = 2 ALORS
+				ECRIRE("le joueur qui commence  : "&player2)
+				ECRIRE("Vous controlez les X")
+			FINSI
+		FINSI
+	
+	The_Grid(tabGrid)
+	party(Player1,Player2,tabgrid,start)
+	win(tabGrid,Player1,Player2)
+FIN.
