@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1542537123 source:c:\users\skyfu\documents\projetcodeblocks\covertrome\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+

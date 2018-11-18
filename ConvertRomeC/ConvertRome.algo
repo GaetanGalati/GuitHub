@@ -1,0 +1,192 @@
+GLORYTOROME
+
+
+
+PROCEDURE Menu_Choix ()
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//Description : Choix de l'utilisateur 
+//
+//Entrées : Un entier
+//
+//Sortie : Lancement d'une des PROCEDURE
+//
+//Notes : Boucle tant que le choix n'est pas égale a 1 ou 2
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+VAR
+	choix : ENTIER
+	verif : ENTIER
+
+
+DEBUT
+
+    ECRIRE(1 : Romain vers décimal)
+    ECRIRE(2 : décimal vers Romain)
+
+    ECRIRE("Fait ton choix !")
+    LIEZ(choix)
+
+    TANT QUE (choix <> 1 ) OU (choix <> 2)
+    FAIRE
+    	CAS choix PARMI
+
+        	cas 1: ROMEvDeci()
+        	cas 2: DECIvRome()
+
+        	cas defaut: ECRIRE("Mauvais choix !")
+    
+    FINTANTQUE 
+	
+FIN
+
+PROCEDURE DECIvRome ()
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//Description : Procédure qui va convertir un nombre décimal en un nombre romain via une boucle wihle, qui va boucler jussqu'a ce que nombre soit égale à 0, à chaque itération la boucle va vérifier la valeur du nombre et écrire un chiffre romain, elle enlèvera ensuite au nombre l'équivalent décimal de ce que vaut le chiffre romain
+//
+//Entrées : Un Entier
+//
+//Sortie : "Un chiffre romain" qui est en réalité une suite de character (X,V,C,M...)
+//
+//Notes : À la base, je voulais le faire via un système de "case of", cependant le switch Case fonctionne uniquement via des constantes (Case >= 1000 est impossible) Je n'ai pas trouver comment palier a cela et donc j'ai fais le même programme avec un système "If else"
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+VAR
+	nb = ENTIER 
+DEBUT
+	
+
+	ECRIRE "Entrez le nombre "
+
+	LIRE(nb) 
+
+	SI nb <= 0 OU nb >=3999
+	ALORS
+		ECRIRE "Erreur, C'est un village peuplé d'irréductibles Gaulois, entrez un nombre entre 1 et 3999 svp "
+	FINSI
+
+	TANT QUE nb <> 0
+	FAIRE
+	   	SI nb>= 1000{
+	   	ALORS
+			ECRIRE "M"
+			NB <- NB-1000
+		FINSI
+	   	
+	   	SI nb>=900
+	   	ALORS
+	   		ECRIRE "CM"
+	   		NB <- NB-900
+		FINSI 
+
+		SI nb>=500
+		ALORS
+			ECRIRE "D"
+	   		NB <- NB-500	
+		FINSI
+
+		SI nb>=400
+		ALORS
+	   		ECRIRE "CD"
+	   		NB <- NB-400	
+		FINSI
+
+	   	SI nb>=100
+	   	ALORS
+	   		ECRIRE "C"
+	   		NB <- NB-100	   	 	
+	   	FINSI
+
+	   	SI nb>=90
+	   	ALORS
+	   		ECRIRE "XC"
+	   		NB <- NB-90
+	   	FINSI
+
+	   	SI nb>=50
+	   	ALORS
+	   		ECRIRE "L"
+	   		NB <- NB-50	
+	   	FINSI
+
+	   	SI nb>=40
+	   	ALORS
+	   		ECRIRE "XL"
+	    	NB <- NB-40
+	   	FINSI
+
+	   	SI nb>=10
+	   	ALORS
+	    	ECRIRE "X"
+	    	NB <- NB-10
+	   	FINSI
+
+	   	SI nb>=9
+	   	ALORS
+	    	ECRIRE "IX"
+	    	NB <- NB-9	   		
+	   	FINSI
+
+	   	SI nb>=5
+	   	ALORS
+	    	ECRIRE "V"
+	    	NB <- NB-5	
+	   	FINSI
+
+	   	SI nb>4
+	   	ALORS
+	   		ECRIRE "IV"
+	    	NB <- NB-4	
+	   	FINSI
+
+	    SINON
+	   		ECRIRE "I"
+	   		NB <- NB-1
+	   	FINSI
+
+FIN
+
+
+
+PROCEDURE ROMEvDeci ()
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//Description : Procédure qui va convertir un nombre Romain (Chaîne de caractères) en un nombre décimal via un switch case et une boucle pour, la boucle va incrémenter une variable "I", qui, si le caractère correspond à un chiffre roain, va l'affecter au tableau en position I 
+//
+//Entrées : Une chaine de caracter (X,V,C,M...)
+//
+//Sortie : "Un chiffre romain" qui est en réalité une suite de caracter (X,V,C,M...)
+//
+//Notes : X
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+VAR
+	nVerif : TABLEAU [100] DE ENTIER
+	cRomain : TABLEAU [100] DE CHAINE
+	nRomain : ENTIER
+	nLongRome : ENTIER
+	i : ENTIER
+
+DEBUT
+
+	ECRIRE "Entrez le nombre romain"
+	LIRE cRomain
+	nLongRome = LONGEURE cRomain
+
+	POUR I ALLANT DE 0  A I>nLongRome  AU PAS DE 1
+	FAIRE
+		CAS cRomain[0] PARMI
+
+		CAS 'I' : nVerif[i] <- 1
+		CAS 'V' : nVerif[i] <- 5
+		CAS 'X' : nVerif[i] <- 10
+		CAS 'L' : nVerif[i] <- 50
+		CAS 'C' : nVerif[i] <- 100
+		CAS 'D' : nVerif[i] <- 500
+		CAS 'M' : nVerif[i] <- 1000
+
+		CAS PAR DEFAUT : ECRIRE "nombre Invalide"
+
+	FINPOUR
+	nRomain <- nVerif[nLongRome]
+	ECRIRE "Votre nombre romain :,cRomain "
+	ECRIRE "Votre nombre ENTIER :,nRomain"
+
+FIN
+
+
