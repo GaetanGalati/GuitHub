@@ -9,11 +9,11 @@ int main()
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //Description : Choix de l'utilisateur
 //
-//Entrées : Un entier
+//EntrÃ©es : Un entier
 //
 //Sortie : Lancement d'une des PROCEDURE
 //
-//Notes : Boucle tant que le choix n'est pas égale a 1 ou 2
+//Notes : X
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 {
@@ -38,13 +38,13 @@ return 0;
 }
 void DECIvRome(){
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//Description : Procédure qui va convertir un nombre décimal en un nombre romain via une boucle wihle, qui va boucler jussqu'a ce que nombre soit égale à 0, à chaque itération la boucle va vérifier la valeur du nombre et écrire un chiffre romain, elle enlèvera ensuite au nombre l'équivalent décimal de ce que vaut le chiffre romain
+//Description : ProcÃ©dure qui va convertir un nombre dÃ©cimal en un nombre romain via une boucle wihle, qui va boucler jussqu'a ce que nombre soit Ã©gale Ã  0, Ã  chaque itÃ©ration la boucle va vÃ©rifier la valeur du nombre et Ã©crire un chiffre romain, elle enlÃ¨vera ensuite au nombre l'Ã©quivalent dÃ©cimal de ce que vaut le chiffre romain
 //
-//Entrées : Un Entier
+//EntrÃ©es : Un Entier
 //
-//Sortie : "Un chiffre romain" qui est en réalité une suite de character (X,V,C,M...)
+//Sortie : "Un chiffre romain" qui est en rÃ©alitÃ© une suite de character (X,V,C,M...)
 //
-//Notes : À la base, je voulais le faire via un système de "case of", cependant le switch Case fonctionne uniquement via des constantes (Case >= 1000 est impossible) Je n'ai pas trouver comment palier a cela et donc j'ai fais le même programme avec un système "If else"
+//Notes : Ã€ la base, je voulais le faire via un systÃ¨me de "case of", cependant le switch Case fonctionne uniquement via des constantes (Case >= 1000 est impossible) Je n'ai pas trouver comment palier a cela et donc j'ai fais le mÃªme programme avec un systÃ¨me "If else"
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     int nNombre=0;
 
@@ -54,17 +54,17 @@ void DECIvRome(){
 
     if (nNombre <=0 || nNombre >TAILLE){
                 //Si le nombre est trop grand, ou trop petit : Erreur !
-                printf("Erreur, C'est un village peuple d'irreductibles Gaulois ! Entrez un nombre entre 1 et 3999 ! ");//Cas où l'utilisateur rentrerais un NB plus grand que 3999 ou plus petit que 0
+                printf("Erreur, C'est un village peuple d'irreductibles Gaulois ! Entrez un nombre entre 1 et 3999 ! ");//Cas oÃ¹ l'utilisateur rentrerais un NB plus grand que 3999 ou plus petit que 0
             }
 
     printf("Votre nombre Romain :");
     while (nNombre != 0){//Tant que le nombre n'est pas 0
 
 
-                if(nNombre >= 1000){//Notre nombre étant 1550...
+                if(nNombre >= 1000){//Notre nombre Ã©tant 1550...
 
-                    printf("M");//...Le programme écrit "M"
-                    nNombre -=1000;//Il enléve 1000, notre nombre et 550, et le programme reboucle
+                    printf("M");//...Le programme Ã©crit "M"
+                    nNombre -=1000;//Il enlÃ©ve 1000, notre nombre et 550, et le programme reboucle
 
                 }else
                 if(nNombre >= 900){
@@ -73,10 +73,10 @@ void DECIvRome(){
                     nNombre -=900;
 
                 }else
-                if(nNombre >= 500){//Notre nombre étant 550...
+                if(nNombre >= 500){//Notre nombre Ã©tant 550...
 
-                    printf("D");//...Le programme écrit D, Donc MD
-                    nNombre -=500;//Et il enléve 500, notre nombre est donc 50, le programme reboucle
+                    printf("D");//...Le programme Ã©crit D, Donc MD
+                    nNombre -=500;//Et il enlÃ©ve 500, notre nombre est donc 50, le programme reboucle
 
                 }else
                 if(nNombre >= 400){
@@ -97,9 +97,9 @@ void DECIvRome(){
                     nNombre -=90;
 
                 }else
-                if(nNombre >= 50){//Notre nombre étant 50...
+                if(nNombre >= 50){//Notre nombre Ã©tant 50...
 
-                    printf("L");//Le programme écrit L a cote de MD, se qui fait MDL, 1550 en chiffre romain
+                    printf("L");//Le programme Ã©crit L a cote de MD, se qui fait MDL, 1550 en chiffre romain
                     nNombre -=50;//50-50 = 0, Donc fin de la boucle tant que nombtre != de 0 !
 
                 }else
@@ -146,11 +146,11 @@ void DECIvRome(){
 
 void ROMEvDeci(){
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//Description : Procédure qui va convertir un nombre Romain (Chaîne de caractères) en un nombre décimal via un switch case et une boucle pour, la boucle va incrémenter une variable "I", qui, si le caractère correspond à un chiffre roain, va l'affecter au tableau en position I
+//Description : ProcÃ©dure qui va convertir un nombre Romain (ChaÃ®ne de caractÃ¨res) en un nombre dÃ©cimal via un switch case et une boucle pour, la boucle va incrÃ©menter une variable "I", qui, si le caractÃ¨re correspond Ã  un chiffre roain, va l'affecter au tableau en position I
 //
-//Entrées : Une chaine de caracter (X,V,C,M...)
+//EntrÃ©es : Une chaine de caracter (X,V,C,M...)
 //
-//Sortie : "Un chiffre romain" qui est en réalité une suite de caracter (X,V,C,M...)
+//Sortie : "Un chiffre romain" qui est en rÃ©alitÃ© une suite de caracter (X,V,C,M...)
 //
 //Notes : X
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
