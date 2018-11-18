@@ -189,4 +189,6 @@ DEBUT
 
 FIN
 
-
+DEBUT
+	Menu_Choix ()
+FIN
