@@ -57,7 +57,7 @@ void DECIvRome(){
                 printf("Erreur, C'est un village peuple d'irreductibles Gaulois ! Entrez un nombre entre 1 et 3999 ! ");//Cas où l'utilisateur rentrerais un NB plus grand que 3999 ou plus petit que 0
             }
 
-    printf("Votre nombre Romain :");
+    printf("Votre nombre Romain : ");
     while (nNombre != 0){//Tant que le nombre n'est pas 0
 
 
