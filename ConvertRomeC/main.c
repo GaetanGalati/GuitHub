@@ -161,7 +161,7 @@ void ROMEvDeci(){
     char cRoman[100];
     printf("Entez le nombre Romainque vous voullez traduire, Cesar !\n");
     scanf("%s",cRoman);//Exemple : MDL
-    nLongRome=strlen(cRoman)-1;//nLongRome prend la valeur de la longeur de la chaine (-1 pour le caract de fin de chaine), il prend donc 3
+    nLongRome=strlen(cRoman);//nLongRome prend la valeur de la longeur de la chaine (-1 pour le caract de fin de chaine), il prend donc 3
     for(i=0; i<nLongRome; i++)//Pour i=0 jussqu'a 3...
         {
 
