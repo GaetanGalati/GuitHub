@@ -155,17 +155,17 @@ void ROMEvDeci(){
 //Notes : X
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     int nVerif[100];
-    int nRoman;
+    int nRoman=1;
     int nLongRome;
     int i;
     char cRoman[100];
-    printf("Entez le nombre Romainque vous voullez traduire, Cesar !\n");
+    printf("Entez le nombre Romain que vous voullez traduire, Cesar !\n");
     scanf("%s",cRoman);//Exemple : MDL
     nLongRome=strlen(cRoman);//nLongRome prend la valeur de la longeur de la chaine (-1 pour le caract de fin de chaine), il prend donc 3
     for(i=0; i<nLongRome; i++)//Pour i=0 jussqu'a 3...
         {
 
-            switch(cRoman[0]) {
+            switch(cRoman[i]) {
                 case 'I': nVerif[i] = 1;break;
                 case 'V': nVerif[i] = 5; break;
                 case 'X': nVerif[i] = 10;break;
@@ -174,14 +174,14 @@ void ROMEvDeci(){
                 case 'D': nVerif[i] = 500;break;//Iter 2: Notre 2emm lettre est D, donc 500, 1000+500 = 1500
                 case 'M': nVerif[i] = 1000;break;//Iter 1: Notre 1er lettre est 'M", donc 1000
             default : printf("\nNombre invalide ! ");break; }
+            nRoman = nRoman += nVerif[i];
 
     }
-     nRoman=nVerif[nLongRome-1];//-1Pour le caract de fin de chaine 
+     nRoman=nVerif[nLongRome-1];//-1 pour le caract de fin de chaine
 
      printf("Votre nombre Romain :%s\n",cRoman );
      printf("Votre nombre Entier : ");
      printf("%d\n",nRoman);//Ecrire 1550.
-
 }
 
 
