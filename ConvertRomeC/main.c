@@ -176,7 +176,7 @@ void ROMEvDeci(){
             default : printf("\nNombre invalide ! ");break; }
 
     }
-     nRoman=nVerif[nLongRome];
+     nRoman=nVerif[nLongRome-1];//-1Pour le caract de fin de chaine 
 
      printf("Votre nombre Romain :%s\n",cRoman );
      printf("Votre nombre Entier : ");
