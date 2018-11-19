@@ -181,9 +181,9 @@ DEBUT
 		CAS 'M' : nVerif[i] <- 1000
 
 		CAS PAR DEFAUT : ECRIRE "nombre Invalide"
+		nRoman -> nRoman +  nVerif[i];
 
 	FINPOUR
-	nRomain <- nVerif[nLongRome]
 	ECRIRE "Votre nombre romain :,cRomain "
 	ECRIRE "Votre nombre ENTIER :,nRomain"
 
